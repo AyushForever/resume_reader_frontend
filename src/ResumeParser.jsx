@@ -4,7 +4,6 @@ import axios from "axios";
 import ResumeDisplay from './ResumeDisplay';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import DisplayPDF from './DisplayResponse';
 
 const ResumeParser = () => {
   const [file, setFile] = useState(null);
