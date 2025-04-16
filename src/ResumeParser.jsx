@@ -20,7 +20,7 @@ const ResumeParser = () => {
     },
     maxFiles: 1,
     onDrop: (acceptedFiles) => {
-      console.log(acceptedFiles[0]);
+      // console.log(acceptedFiles[0]);
       setFile(acceptedFiles[0]);
       setPdfFile(URL.createObjectURL(acceptedFiles[0]));
       setError("");
@@ -50,7 +50,7 @@ const ResumeParser = () => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       if(response.data.spanResume || response.data.spanResume == "⚠️ This resume may be spam or incomplete or Valid resume required"){
         setError(response.data.spanResume || "⚠️ This resume may be spam or incomplete or Valid resume required");
       }else{
@@ -70,7 +70,7 @@ const ResumeParser = () => {
       {/* Dropzone */}
       <div
         {...getRootProps()}
-        className={`border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer transition-colors ${isDragActive ? "border-blue-500 bg-blue-50" : "hover:bg-gray-50"
+        className={`border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer transition-colors ${isDragActive ? "border-blue-500 bg-blue-50" : "hover:bg-gray-500"
           }`}
       >
         <input {...getInputProps()} />
@@ -79,7 +79,7 @@ const ResumeParser = () => {
         ) : isDragActive ? (
           <p>Drop your resume here...</p>
         ) : (
-          <p>Drag & drop a resume (PDF/DOCX/image), or click to select</p>
+          <p>Drag & drop a resume (PDF only), or click to select</p>
         )}
       </div>
 
@@ -97,7 +97,7 @@ const ResumeParser = () => {
         </button>
         {file && (
           <button
-            onClick={() => setFile(null)}
+            onClick={() => {setFile(null);setParsedData(null)}}
             className="px-4 py-2 text-red-600 hover:text-red-800"
           >
             Clear
