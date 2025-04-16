@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dropzone {
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+.dropzone-active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.fontColor {
+  color: black;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+}
+.react-tabs{
+  width: 100%;
+}
+.react-tabs__tab-panel{
+  max-height: 365px;
+  overflow-y: auto;
+}
